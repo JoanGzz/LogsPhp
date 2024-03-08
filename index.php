@@ -40,8 +40,7 @@ include 'conexion.php';
 
         <label for="pass">Contraseña:</label>
         <input type="password" id="pass" name="pass" required>
-        <input type="button" class="btn" id="mostrar" value="Mostrar" onclick="mostrarContraseña()">
-
+        
         <label for="correo">Correo electrónico:</label>
         <input type="email" id="correo" name="correo" required>
 

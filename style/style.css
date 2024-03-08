@@ -58,3 +58,15 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #333333; /* Negro oscuro */
 }
+.btn{
+    border: none;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #191b1d; 
+    color: #fff; 
+    text-decoration: none; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}

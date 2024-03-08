@@ -50,18 +50,10 @@ tbody tr:nth-of-type(even) {
 tbody tr:hover {
     background-color: rgba(0, 0, 0, 0.075);
 }
-.btn-group {
-    display: flex;
-    justify-content: center;
-}
-.btn {
-    margin: 0 2px;
-}
-
-.h2{
+.h2 {
     text-align: center;
 }
-.my-button{
+.my-button {
     border: none;
     display: inline-block;
     padding: 10px 20px;
@@ -72,4 +64,14 @@ tbody tr:hover {
     border-radius: 5px; 
     cursor: pointer; 
     transition: background-color 0.3s ease; 
+}
+@media screen and (max-width: 600px) {
+    .navbar a {
+     
+        display: block;
+        text-align: left;
+    }
+    .navbar {
+        overflow: hidden;
+    }
 }

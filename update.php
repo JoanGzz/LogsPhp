@@ -73,12 +73,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style/stUp.css">
+    <link rel="stylesheet" href="style/style.css">
     <title>Editar usuario</title>
 </head>
 <body>
     <div class="container">
-        <h2>Editar usuario</h2>
+    <h2 style="text-align: center;">Editar usuario</h2>
         <form method="post" action="update.php">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
 
@@ -113,7 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="butt">
             <button type="submit" class="btn btn-primary" onclick='return confirmar()'>Guardar Cambios</button>
             
-            <a href="usuarios.php" class="btn btn-secondary">Volver</a>
+            <a href="usuarios.php" class="bta">Volver</a>
             </div>
         </form>
         
