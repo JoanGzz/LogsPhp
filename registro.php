@@ -21,8 +21,8 @@ if(mysqli_query($conexion, $query)){
     $ip = $_SERVER['REMOTE_ADDR'];
 
     // Insertar registro de evento
-    $accion = "Insercion de cliente";
-    $detalles = "Se ha insertado un nuevo cliente con nombre: $nombre y apellido: $apellido";
+    $accion = "Registro de usuario";
+    $detalles = "Se ha insertado un nuevo usuario con nombre: $nombre y apellido: $apellido";
     insertar_registro_evento($accion, $detalles, $ip);
 
     header('Location:./index.php');

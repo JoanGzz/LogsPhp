@@ -11,7 +11,7 @@
     <a href="usuarios.php">Registros</a>
     <a href="eventos.php">Eventos</a>
     </div>
-    <h2 style="text-align: center";>Lista de Eventos Registrados</h2>
+    <h2 style="text-align: center";>Eventos</h2>
     <table>
         <thead>
             <tr>
@@ -27,9 +27,9 @@
             include('conexion.php');
             $conexion = conexion();
 
-            $query = "SELECT * FROM eventos";
+            $query = "SELECT * FROM eventos ORDER BY fecha_hora DESC"; // Ordenar por fecha_hora en orden descendente
             $result = mysqli_query($conexion, $query);
-
+            
             if ($result && mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     echo "<tr>";

@@ -21,7 +21,6 @@
             <th>Edad</th>
             <th>Número</th>
             <th>Usuario</th>
-            <th>Contraseña</th>
             <th>Correo</th>
             <th>Fecha de Nacimiento</th>
             <th>Acciones</th>
@@ -42,12 +41,11 @@
                     echo "<td>".$row['edad']."</td>";
                     echo "<td>".$row['numero']."</td>";
                     echo "<td>".$row['usuario']."</td>";
-                    echo "<td>".$row['pass']."</td>";
                     echo "<td>".$row['correo']."</td>";
                     echo "<td>".$row['F_nacimiento']."</td>";
                     echo "<td>
-                    <a href='update.php?id={$row['id']}' class='btn btn-warning'>Editar</a>
-                    <a href='delete.php?id={$row['id']}' class='btn btn-danger'>Eliminar</a>
+                    <a href='update.php?id={$row['id']}' class='my-button'>Editar</a>
+                    <a href='delete.php?id={$row['id']}' class='my-button' onclick='return confirmar()'>Eliminar</a>
                           </td>";
                     echo "</tr>";
                 }
@@ -59,4 +57,5 @@
         ?>
     </table>
 </body>
+<script src="script.js"></script>
 </html>

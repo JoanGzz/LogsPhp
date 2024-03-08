@@ -10,7 +10,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $edad = $_POST['edad'];
     $numero = $_POST['numero'];
     $usuario = $_POST['usuario'];
-    $pass = sha1($_POST['pass']);
     $correo = $_POST['correo'];
     $F_nacimiento = $_POST['F_nacimiento'];
 
@@ -28,10 +27,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         foreach ($fila_antigua as $campo => $valor_antiguo) {
             $valor_nuevo = $$campo; // Obtener el valor nuevo de la variable
             if ($valor_antiguo != $valor_nuevo) {
-                $detalles .= ", $campo: $valor_antiguo $cambio $valor_nuevo";
+                $detalles .= ", En el campo '$campo', Se cambio el valor: '$valor_antiguo' por '$valor_nuevo'";
             }
         }
-
+        
         // Registro del evento de actualización
         $accion = "Actualizacion de usuario";
         $ip = $_SERVER['REMOTE_ADDR'];
@@ -56,7 +55,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $edad = $fila["edad"];
         $numero = $fila["numero"];
         $usuario = $fila["usuario"];
-        $pass =  $fila["pass"];
         $correo = $fila["correo"];
         $F_nacimiento = $fila["F_nacimiento"];
         
@@ -105,10 +103,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <input type="text" class="form-control" id="usuario" name="usuario" value="<?php echo $usuario; ?>" required>
             </div>
             <div class="form-group">
-                <label for="pass">Password:</label>
-                <input type="password" class="form-control" id="pass" name="pass" value="<?php echo $pass; ?>" required>
-            </div>
-            <div class="form-group">
                 <label for="correo">Correo:</label>
                 <input type="email" class="form-control" id="correo" name="correo" value="<?php echo $correo; ?>" required>
             </div>
@@ -116,9 +110,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="F_nacimiento">F. Nacimiento:</label>
                 <input type="date" class="form-control" id="F_nacimiento" name="F_nacimiento" value="<?php echo $F_nacimiento; ?>" required>
             </div>
-            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-        </form><br>
-        <a href="usuarios.php" class="btn btn-secondary">Volver</a>
+            <div class="butt">
+            <button type="submit" class="btn btn-primary" onclick='return confirmar()'>Guardar Cambios</button>
+            
+            <a href="usuarios.php" class="btn btn-secondary">Volver</a>
+            </div>
+        </form>
+        
     </div>
 </body>
 </html>
+<script src="script.js"></script>
