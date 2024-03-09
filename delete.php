@@ -5,13 +5,14 @@ $conexion = conexion();
 if (isset($_GET["id"])) {
     // Eliminar el usuario
     $id = $_GET["id"];
+    $nombre = $_GET["nombre"];
     $query = "DELETE FROM clientes WHERE id='$id'";
     $result = mysqli_query($conexion, $query);
 
     if ($result) {
         // Registro del evento de eliminación
         $accion = "Eliminación de usuario";
-        $detalles = "Se ha eliminado el usuario con ID: $id";
+        $detalles = "Se ha eliminado el registro con el usiario:$nombre";
         $ip = $_SERVER['REMOTE_ADDR'];
         insertar_registro_evento($accion, $detalles, $ip);
 

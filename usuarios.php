@@ -58,8 +58,9 @@
                 echo "<td>".$row['correo']."</td>";
                 echo "<td>".$row['F_nacimiento']."</td>";
                 echo "<td>
-                    <a href='update.php?id={$row['id']}' class='my-button'>Editar</a>
-                    <a href='delete.php?id={$row['id']}' class='my-button' onclick='return confirmar()'>Eliminar</a>
+                <a href='update.php?id={$row['id']}&nombre={$row['nombre']}' class='my-button'>Editar</a>
+                <a href='delete.php?id={$row['id']}&nombre={$row['nombre']}' class='my-button' onclick='return confirmar()'>Eliminar</a>;
+          
                           </td>";
                 echo "</tr>";
             }

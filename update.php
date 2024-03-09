@@ -19,11 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fila_antigua = mysqli_fetch_assoc($result_antiguo);
 
     // Realizar la actualización
-    $query = "UPDATE clientes SET nombre='$nombre', apellido='$apellido', edad='$edad', numero='$numero', usuario='$usuario', pass='$pass', correo='$correo', F_nacimiento='$F_nacimiento' WHERE id='$id'";
+    $query = "UPDATE clientes SET nombre='$nombre', apellido='$apellido', edad='$edad', numero='$numero', usuario='$usuario', correo='$correo', F_nacimiento='$F_nacimiento' WHERE id='$id'";
     $result = mysqli_query($conexion, $query);
     if ($result) {
         // Comparar valores antiguos y nuevos para obtener detalles de actualización
-        $detalles = "Se ha actualizado el usuario con ID: $id";
+        $detalles = "Se ha actualizado el usuario:$nombre con ID: $id";
         foreach ($fila_antigua as $campo => $valor_antiguo) {
             $valor_nuevo = $$campo; // Obtener el valor nuevo de la variable
             if ($valor_antiguo != $valor_nuevo) {
